@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+:root{
+    --pmcolor : #368836;
+    --black : #192a56;
+    --lt-color: #666;
+    --white : #ffffff;
+    --box-shadow: 2px 4px 10px grey;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html,body{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/*==================================
+            Header Area
+==================================*/
+header{
+   background-color: var(--white) ;
+   padding: 1rem 7%;
+   z-index: 1000;
+   scroll-padding-top: 5.5rem;
+   overflow-x: hidden;
+   box-shadow: var(--box-shadow);
+}
+.navbar{
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+#header-area .logo a{
+    color: var(--black);
+    font-size: 3.5em;
+    font-weight: 600;
+}
+#header-area .logo a i{
+    color: var(--pmcolor);
+}
+.navbar .menu{
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .menu ul{
+    margin: 0 10px;
+}
+.navbar .menu ul li{
+    list-style: none;
+    display: inline-block;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+}
+.navbar .menu ul li:hover{
+    background-color: var(--pmcolor);
+}
+.navbar .menu ul li a{
+    color: var(--lt-color);
+}
+.navbar .menu ul li:hover a{
+    color: var(--white);
+}
+
+.icons i,.icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    padding: 10px;
+    align-items: center;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    background-color: #eee;
+    transition: 1s;
+}
+.icons i:hover,.icons a:hover{
+    color: var(--white);
+    background-color: var(--pmcolor);
+    rotate: 360deg;
+}
+#menu-bars{
+    display: none;
+}
+
+
+
+
+
+/*==============================
+            Responsive
+==============================*/
+@media (max-width:850px) {
+    header{
+        padding: 1rem 2rem;
+     }
+}
+@media (max-width:768px) {
+    #menu-bars{
+        display: inline-block;
+    }
+    .menu{
+        position: absolute;
+        top: 9rem;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .menu.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .navbar .menu ul li{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        font-size: 2rem;
+        background-color: #eee;
+    }
+    .navbar .menu ul li:hover{
+        color: var(--white);
+        background-color: var(--pmcolor);
+    }
+
+}
+@media (max-width:540px) {
+    html,body{
+        font-size: 50%;
+    }
+    .icons i,.icons a{
+        margin-left: .3rem;
+        padding: 5px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+    }
+}
+
