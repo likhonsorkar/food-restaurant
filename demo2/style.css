@@ -2,7 +2,7 @@
 :root{
     --pmcolor : #368836;
     --black : #192a56;
-    --lt-color: #666;
+    --pm-color: #666;
     --white : #ffffff;
     --box-shadow: 2px 4px 10px grey;
 
@@ -17,8 +17,47 @@
     transition: all .2s linear;
 }
 html,body{
-    font-size: 62.5%;
+    font-size: 90%;
     scroll-behavior: smooth;
+}
+section{
+    padding: 2rem 9%;
+}
+section:nth-child(even){
+    background-color: #eee;
+}
+.btn{
+    color: var(--white);
+    background-color: var(--black);
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    display: inline-block;
+}
+.btn:hover{
+    background-color: var(--pmcolor);
+    letter-spacing: .1rem;
+}
+.card-btn{
+    color: var(--white);
+    background-color: var(--black);
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    display: inline-block;
+}
+.card-btn:hover{
+    background-color: var(--pmcolor);
+}
+
+img {
+    width: 100%;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
 }
 /*==================================
             Header Area
@@ -49,6 +88,9 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+.menu.active {
+    z-index: 100;
+}
 .navbar .menu ul{
     margin: 0 10px;
 }
@@ -63,7 +105,7 @@ header{
     background-color: var(--pmcolor);
 }
 .navbar .menu ul li a{
-    color: var(--lt-color);
+    color: var(--pm-color);
 }
 .navbar .menu ul li:hover a{
     color: var(--white);
@@ -90,6 +132,117 @@ header{
     display: none;
 }
 
+/*============================
+   Slider Area
+=============================*/
+
+#slider-area .main-slide .slide{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 4rem;
+}
+#slider-area .main-slide .slide .content{
+
+}
+#slider-area .main-slide .slide .content span{
+    font-size: 2.5rem;
+    color: var(--pmcolor);
+}
+#slider-area .main-slide .slide .content h3{
+    font-size: 7rem;
+    color: var(--black);
+    margin-top: 2px;
+}
+#slider-area .main-slide .slide .content p{
+    font-size: 2.2rem;
+    color: var(--pm-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+#slider-area .main-slide .slide .img img{
+    max-width: 100%;
+    padding: 1rem;
+}
+.swiper-pagination-bullet-active{
+    background-color: var(--pmcolor) !important;
+}
+/*================================
+    Our Product Section
+==================================*/
+.sub-heading{
+    text-align: center;
+    color: var(--pmcolor);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+.product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+.product .box{
+    background-color: #eee;
+    padding: 2.5rem;
+    border-radius: .5rem;
+}
+.box{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+ .box .fa-heart,
+ .box .fa-eye{
+    text-align: center;
+    top:1.5rem;
+    background-color:#fff;
+    border-radius: 50%;
+    height: 4rem;
+    width:4rem;
+    line-height:4rem;
+    font-size: 2rem;
+    color:var(--black);
+}
+
+.box .fa-heart:hover,
+.box .fa-eye:hover{
+    background-color: var(--pmcolor);
+    color:#fff;
+}
+.box img{
+    margin:1rem 0;
+}
+
+.box h3{
+    color:var(--black);
+    font-size: 2.5rem;
+}
+
+.box .stars{
+    padding:1rem 0;
+}
+
+ .box .stars i{
+    font-size: 1.7rem;
+    color:var(--pmcolor);
+}
+
+ .box span{
+    color:var(--pmcolor);
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2.5rem;
+}
+
 
 
 
@@ -97,6 +250,23 @@ header{
 /*==============================
             Responsive
 ==============================*/
+@media (max-width:1200px) {
+    .product{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}
+@media (max-width:940px) {
+    #slider-area .main-slide .slide{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    .product{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 @media (max-width:850px) {
     header{
         padding: 1rem 2rem;
@@ -129,6 +299,15 @@ header{
         color: var(--white);
         background-color: var(--pmcolor);
     }
+    #slider-area .main-slide .slide .content span{
+        font-size: 2.0rem;
+    }
+    #slider-area .main-slide .slide .content h3{
+        font-size: 5rem;
+    }
+    #slider-area .main-slide .slide .content p{
+        font-size: 1.7rem;
+    }
 
 }
 @media (max-width:540px) {
@@ -140,6 +319,9 @@ header{
         padding: 5px;
         border-radius: 50%;
         font-size: 1.5rem;
+    }
+    .product{
+        grid-template-columns: 1fr;
     }
 }
 
