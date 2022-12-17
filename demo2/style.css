@@ -59,6 +59,7 @@ img {
     display: flex;
     justify-content: space-between;
 }
+
 /*==================================
             Header Area
 ==================================*/
@@ -187,7 +188,7 @@ header{
 }
 .product{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 .product .box{
@@ -243,6 +244,58 @@ header{
     font-size: 2.5rem;
 }
 
+/*==============================
+    About Area
+=============================*/
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+}
+.about .row .image{
+    flex: 1 1 45rem;
+}
+.about .row .content{
+    flex: 1 1 45rem;
+}
+.about .row .content h3{
+    color: var(--black);
+    font-size: 4rem;
+    padding: 3rem 0;
+}
+.about .row .content p{
+    color: var(--black);
+    font-size: 1.5rem;
+}
+.about .row .icons-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: .5rem;
+}
+.about .row .content .icons-container .icons{
+    background:#eee;
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    flex:1 1 17rem;
+    padding:1.5rem 1rem;
+}
+
+.about .row .content .icons-container .icons i{
+    font-size: 2.5rem;
+    color:var(--green);
+}
+
+.about .row .content .icons-container .icons span{
+    font-size: 1.5rem;
+    color:var(--black);
+}
 
 
 
@@ -256,23 +309,7 @@ header{
     }
     
 }
-@media (max-width:940px) {
-    #slider-area .main-slide .slide{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding-top: 2rem;
-    }
-    .product{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (max-width:850px) {
-    header{
-        padding: 1rem 2rem;
-     }
-}
-@media (max-width:768px) {
+@media (max-width:1024px) {
     #menu-bars{
         display: inline-block;
     }
@@ -299,6 +336,25 @@ header{
         color: var(--white);
         background-color: var(--pmcolor);
     }
+}
+@media (max-width:940px) {
+    
+    #slider-area .main-slide .slide{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    .product{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:850px) {
+    header{
+        padding: 1rem 2rem;
+     }
+}
+@media (max-width:768px) {
     #slider-area .main-slide .slide .content span{
         font-size: 2.0rem;
     }
@@ -313,6 +369,12 @@ header{
 @media (max-width:540px) {
     html,body{
         font-size: 50%;
+    }
+    header{
+        font-size: 200%;
+    }
+    header a.fas{
+        font-size: 200%;
     }
     .icons i,.icons a{
         margin-left: .3rem;
